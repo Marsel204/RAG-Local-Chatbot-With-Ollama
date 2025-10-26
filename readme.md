@@ -1,71 +1,84 @@
-<h1>Build a local RAG with Ollama</h1>
+# Agentic RAG Chatbot
 
-<h2>Watch the full tutorial on my YouTube Channel</h2>
-<div>
+This project is a Retrieval-Augmented Generation (RAG) chatbot powered by LangChain, Streamlit, and Ollama. It uses a local Chroma vector database to store and retrieve document embeddings, enabling context-aware responses to user queries.
 
-<a href="https://youtu.be/c5jHhMXmXyo">
-    <img src="thumbnail_small.png" alt="Thomas Janssen Youtube" width="200"/>
-</a>
-</div>
+## Features
+- **Streamlit UI**: Interactive chat interface for user interaction.
+- **LangChain Integration**: Uses LangChain agents, prompts, and tools for flexible RAG workflows.
+- **Ollama Embeddings**: Embedding model for document vectorization.
+- **Chroma Vector Store**: Local vector database for fast similarity search.
+- **Multi-format Data Ingestion**: Supports TXT, PDF, DOCX, CSV, and JSON files for knowledge ingestion.
+- **Environment Configuration**: Uses `.env` for model and database settings.
 
-<h2>Prerequisites</h2>
-<ul>
-  <li>Python 3.11+</li>
-</ul>
+## File Structure
+- `chatbot.py`: Main Streamlit app for chat UI and agent execution.
+- `RAG.py`: Data ingestion, chunking, embedding, and vector store population.
+- `chroma_db/`: Local Chroma database files.
+- `data/`: Folder for source documents (e.g., `cooking.txt`).
+- `.env`: Environment variables for model/database configuration.
 
-<h2>Installation</h2>
-<h3>1. Clone the repository:</h3>
+## Setup
+1. **Install dependencies**:
+   ```powershell
+   pip install -r requirements.txt
+   ```
+2. **Configure environment**:
+   - Create a `.env` file with the following variables:
+     ```env
+     EMBEDDING_MODEL=your-embedding-model
+     CHAT_MODEL=your-chat-model
+     MODEL_PROVIDER=your-model-provider
+     COLLECTION_NAME=your-collection-name
+     DATABASE_LOCATION=./chroma_db
+     DATASET_STORAGE_FOLDER=./data
+     ```
+3. **Add data**:
+   - Place TXT, PDF, DOCX, CSV, or JSON files in the `data/` folder.
 
+4. **Run ingestion**:
+   ```powershell
+   python RAG.py
+   ```
+   This will process and embed your documents into the Chroma vector store.
+
+5. **Start the chatbot**:
+   ```powershell
+   streamlit run chatbot.py
+   ```
+
+
+## Supported RAG Models
+This chatbot supports any model available via Ollama and LangChain that provides embeddings and chat capabilities. Some popular models include:
+
+- **Ollama**:
+   - llama
+   - mistral
+   - phi3
+   - codellama
+   - gemma
+   - dbrx
+   - mixtral
+   - orca-mini
+   - vicuna
+   - openchat
+   - neural-chat
+   - dolphin-mixtral
+   - qwen
+   - starling-lm
+   - and more (see [Ollama models list](https://ollama.com/library))
+
+- **LangChain**:
+   - Any model supported by LangChain's chat and embedding interfaces (OpenAI, HuggingFace, etc.)
+
+Specify your desired models in the `.env` file:
+```env
+EMBEDDING_MODEL=llama2
+CHAT_MODEL=llama2
+MODEL_PROVIDER=ollama
 ```
-git clone https://github.com/ThomasJanssen-tech/Local-RAG-with-Ollama
-cd Local-RAG-With-Ollama
-```
 
-<h3>2. Create a virtual environment</h3>
+## Usage
+- Enter your questions in the chat interface. The agent will retrieve relevant information from the ingested documents and respond with sources.
 
-```
-python -m venv venv
-```
-
-<h3>3. Activate the virtual environment</h3>
-
-```
-venv\Scripts\Activate
-(or on Mac): source venv/bin/activate
-```
-
-<h3>4. Install libraries</h3>
-
-```
-pip install -r requirements.txt
-```
-
-<h3>5. Add Bright Data API Key</h3>
-<ul>
-<li>Get your $15 Bright Data credits: https://brdta.com/tomstechacademy</li>
-<li>Rename the .env.example file to .env</li>
-<li>Add your Bright Data API key</li>
-<li><i>If you want to use ChatGPT or Anthropic models, add an API key (not required for Ollama)</i></li>
-</ul>
-
-<h2>Executing the scripts</h2>
-
-- Open a terminal in VS Code
-
-- Execute the following command:
-
-```
-python run 1_scraping_wikipedia.py
-python run 2_chunking_embedding_ingestion.py
-streamlit run 3_chatbot.py
-```
-
-<h2>Further reading</h2>
-<ul>
-<li>https://www.ibm.com/think/topics/vector-embedding</li>
-<li>https://ollama.com/blog/embedding-models</li>
-<li>https://python.langchain.com/docs/integrations/vectorstores/chroma/</li>
-<li>https://python.langchain.com/docs/integrations/text_embedding/ollama/</li>
-<li>https://ollama.com/library/mxbai-embed-large</li>
-<li>https://ollama.com/library/qwen3</li>
-</ul>
+## License
+MIT

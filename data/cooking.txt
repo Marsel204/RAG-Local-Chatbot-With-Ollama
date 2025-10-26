@@ -1,0 +1,15 @@
+Title: Spaghetti Carbonara
+Source: https://example.com/recipes/spaghetti-carbonara
+To make authentic Spaghetti Carbonara, cook spaghetti until al dente. In a separate bowl, mix eggs, grated Parmesan cheese, and black pepper. Fry pancetta until crispy. Combine spaghetti with the pancetta, remove from heat, then mix in the egg mixture quickly so it forms a creamy sauce. Serve immediately with extra cheese.
+
+Title: Fluffy Pancake Delight
+Source: https://example.com/recipes/pancake-delight
+To prepare fluffy pancakes, mix flour, sugar, baking powder, salt, milk, eggs, and melted butter. Heat a nonstick pan, pour a small amount of batter, and cook until bubbles form. Flip and cook the other side until golden brown. Serve with honey, butter, or maple syrup.
+
+Title: Japanese Chicken Teriyaki
+Source: https://example.com/recipes/chicken-teriyaki
+For chicken teriyaki, mix soy sauce, mirin, sake, and sugar to make the sauce. Grill or pan-fry chicken thighs until golden brown, then pour in the sauce and simmer until thick and glossy. Slice and serve with steamed rice and sesame seeds.
+
+Title: Vegan Salad Bowl
+Source: https://example.com/recipes/vegan-salad-bowl
+Combine fresh spinach, kale, cherry tomatoes, chickpeas, and avocado. Toss with olive oil, lemon juice, salt, and pepper. Optional toppings: roasted nuts, quinoa, or tofu for extra protein.
