@@ -80,3 +80,5 @@ MODEL_PROVIDER=ollama
 ## Usage
 - Enter your questions in the chat interface. The agent will retrieve relevant information from the ingested documents and respond with sources.
 
+## License
+Marselinus Allen Nugraha
